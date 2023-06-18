@@ -1,45 +1,17 @@
-# Welcome to KMPStarterOS, a minimalist but yet useful open source version of [AppKickstarter](https://appkickstarter.com)
+# Assignment 2
 
-If you just need to support android and ios with no backend requirement 
-(just offline data) and no need for in app purchases or fancy features 
-like auth and onboarding then you are on the right place and this open source template is good for you.
+Kotlin 
 
-Otherwise, if you need more capabilities please check out our premium template [AppKickstarter](https://appkickstarter.com) which is on the same stack but with a lot more of content.
+Realm repository
 
-![gif](kmp.gif)
+CRUD function
 
-## Platform supported for KMPStarterOS
+<img height="350" src="/readme_images/one.png" width="150"/>
+<img height="350" src="/readme_images/two.png" width="150"/>
+<img height="350" src="/readme_images/three.png" width="150"/>
 
-- Android
-- iOS 
 
-## Architecture 
 
-- Shared KMM library
-- Android app
-- iOS app
 
-## Libraries already configured
 
-### IOS
 
-- SwiftUI for iOS UI
-
-### Android
-
-- Jetpack Compose for Android UI
-- Android workmanager
-- Android Compose navigation
-- Accompanist (systemuicontroller, permissions)
-
-### Multiplatform
- 
-- Compose multiplatform for shared UI
-- Multiplatform localization (Moko resources)
-- Multiplatform logging (Napier)
-- Multiplatform dependency injection (Koin)
-- Multiplatform database (SqlDelight)
-- Multiplatform key-value storage (russhwolf:multiplatform-settings)
-- Multiplatform dates (Kotlinx-datetime)
-- Multiplatform http client (Ktor)
-- Multiplatform navigation (Voyager)

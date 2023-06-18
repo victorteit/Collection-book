@@ -22,8 +22,13 @@ allprojects {
 
 buildscript {
     dependencies {
-        // used to init firebase (https://stackoverflow.com/a/40085096)
+        classpath ("com.android.tools.build:gradle:8.0.2")
         classpath("com.google.gms:google-services:4.3.15")
         classpath("dev.icerock.moko:resources-generator:0.21.2")
+
+    }
+    repositories {
+        mavenCentral()
+        google()
     }
 }

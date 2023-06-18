@@ -21,7 +21,7 @@ kotlin {
                 implementation("androidx.compose.animation:animation")
                 implementation("androidx.compose.material:material-icons-core")
                 implementation("androidx.compose.material:material-icons-extended")
-                implementation("androidx.activity:activity-compose:1.7.0")
+                implementation("androidx.activity:activity-compose:1.7.2")
 
                 implementation("com.google.accompanist:accompanist-systemuicontroller:0.29.2-rc")
                 implementation("com.google.accompanist:accompanist-permissions:0.29.1-alpha")
@@ -34,17 +34,17 @@ val properties = org.jetbrains.kotlin.konan.properties.Properties()
 properties.load(project.rootProject.file("local.properties").inputStream())
 
 android {
-    compileSdk = 33
+    compileSdk = 34
     defaultConfig {
         applicationId = "com.lduboscq.appkickstarter.android"
         minSdk = 24
-        targetSdk = 33
+        targetSdk = 34
         versionCode = 1
         versionName = "1.0"
     }
     compileOptions {
-        sourceCompatibility = JavaVersion.VERSION_1_8
-        targetCompatibility = JavaVersion.VERSION_1_8
+        sourceCompatibility = JavaVersion.VERSION_17
+        targetCompatibility = JavaVersion.VERSION_17
     }
 
     buildTypes {
@@ -60,4 +60,8 @@ android {
             )
         }
     }
+    namespace = "com.lduboscq.appkickstarter"
+}
+dependencies {
+    implementation("androidx.core:core-ktx:1.10.1")
 }

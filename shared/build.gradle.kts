@@ -5,6 +5,8 @@ plugins {
     id("org.jetbrains.compose")
     kotlin("plugin.serialization")
     id("dev.icerock.mobile.multiplatform-resources")
+    id("io.realm.kotlin") version "1.9.1"
+
 }
 
 version = "1.0-SNAPSHOT"
@@ -54,8 +56,8 @@ kotlin {
                 implementation(compose.foundation)
                 implementation(compose.material)
                 implementation(compose.material3)
-                implementation("org.jetbrains.compose.components:components-resources:1.3.0-beta04-dev879")
-                implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.4.1")
+                implementation("org.jetbrains.compose.components:components-resources:1.4.0")
+                implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.5.0")
                 api("io.github.qdsfdhvh:image-loader:$compose_image")
 
                 api("org.jetbrains.kotlinx:kotlinx-datetime:0.4.0")
@@ -68,12 +70,14 @@ kotlin {
                 api("cafe.adriel.voyager:voyager-navigator:$voyagerVersion")
                 api("cafe.adriel.voyager:voyager-transitions:$voyagerVersion")
                 implementation("cafe.adriel.voyager:voyager-koin:$voyagerVersion")
+                implementation("io.realm.kotlin:library-sync:1.9.1")
+                implementation("io.realm.kotlin:library-base:1.9.1")
             }
         }
         val androidMain by getting {
             dependencies {
-                implementation("androidx.appcompat:appcompat:1.5.1")
-                implementation("androidx.core:core-ktx:1.9.0")
+                implementation("androidx.appcompat:appcompat:1.6.1")
+                implementation("androidx.core:core-ktx:1.10.1")
                 implementation("io.ktor:ktor-client-okhttp:$ktorVersion")
 
                 api("io.insert-koin:koin-android:$koin_android_version")
@@ -102,18 +106,23 @@ kotlin {
 }
 
 android {
-    compileSdk = 33
+    compileSdk = 34
     sourceSets["main"].manifest.srcFile("src/androidMain/AndroidManifest.xml")
     sourceSets["main"].res.srcDirs("src/androidMain/res")
     sourceSets["main"].resources.srcDir("src/commonMain/resources")
     defaultConfig {
         minSdk = 24
-        targetSdk = 33
+        targetSdk = 34
     }
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_1_8
         targetCompatibility = JavaVersion.VERSION_1_8
     }
+    namespace = "com.lduboscq.appkickstarter"
+}
+dependencies {
+    implementation("androidx.core:core-ktx:1.10.1")
+    implementation("androidx.constraintlayout:constraintlayout-compose:1.0.1")
 }
 
 multiplatformResources {
